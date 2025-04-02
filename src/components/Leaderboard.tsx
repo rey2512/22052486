@@ -1,16 +1,12 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
-  Card,
   Typography,
   Box,
   Paper,
   Avatar,
   List,
   ListItem,
-  LinearProgress,
-  IconButton,
-  Tooltip,
   Skeleton,
   CircularProgress
 } from '@mui/material';
