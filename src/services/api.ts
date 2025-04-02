@@ -3,10 +3,15 @@ import { User, Post, Comment, LeaderboardUser, TrendingPost } from '../types';
 
 const API_BASE_URL = 'https://jsonplaceholder.typicode.com'; // Example API URL
 
+// Your API token
+const API_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQzNjExMDc2LCJpYXQiOjE3NDM2MTA3NzYsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU5YjhiZDUxLWQyNmMtNDUyMi04M2UyLTU1Nzg0NjBlNjgzMSIsInN1YiI6IjIyMDUyNDg2QGtpaXQuYWMuaW4ifSwiZW1haWwiOiIyMjA1MjQ4NkBraWl0LmFjLmluIiwibmFtZSI6InByYXNlbmplZXQgc2luZ2giLCJyb2xsTm8iOiIyMjA1MjQ4NiIsImFjY2Vzc0NvZGUiOiJud3B3cloiLCJjbGllbnRJRCI6ImU5YjhiZDUxLWQyNmMtNDUyMi04M2UyLTU1Nzg0NjBlNjgzMSIsImNsaWVudFNlY3JldCI6IldKWEFZeE5ZVW13ekhUclMifQ.HPEv05sC9L8EcADrUPt_zCLwBbAT7YwQmgsq0SAiRtw";
+
+// Create axios instance with token
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': `Bearer ${API_TOKEN}` // Add token to headers
   },
 });
 
@@ -250,4 +255,4 @@ export const fetchFeedPosts = async (page: number = 1): Promise<Post[]> => {
     console.error('Error fetching feed posts:', error);
     throw error;
   }
-}; 
+};
